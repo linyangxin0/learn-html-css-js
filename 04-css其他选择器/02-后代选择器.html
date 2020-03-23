@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  /* div下的span元素，无论直接子元素还是后代元素 */
+  div span{
+    color: red;
+  }
+
+  div p span{
+    color: tan;
+  }
+/* div下的直接子元素span */
+  div>span{
+    color: yellow;
+  }
+</style>
+<body>
+  <span>文字内容1</span>
+  <div>
+    <span>文字内容2</span>
+    <p><span>文字内容3</span></p>
+  </div>
+</body>
+</html>

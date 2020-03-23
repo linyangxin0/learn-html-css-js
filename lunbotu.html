@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  /* 初始化 */
+  ul,body{
+    margin: 0;
+    padding: 0;
+  }
+
+  li{
+    list-style-type: none;
+  }
+
+  .wrap{
+    position: relative;
+    width: 600px;
+    height: 300px;
+  }
+
+  .wrap .main-picture{
+    position: absolute;
+  }
+
+  .wrap .main-picture li{
+    width: 600px;
+    height: 300px;
+    position: absolute;
+
+    opacity: 0;
+    transition: all .6s;
+  }
+
+  .wrap .main-picture li:nth-of-type(1){
+    background-color: orange;
+  }
+
+  .wrap .main-picture li:nth-of-type(2){
+    background-color: greenyellow;
+  }
+
+  .wrap .main-picture li:nth-of-type(3){
+    background-color: burlywood;
+  }
+
+  .wrap .main-picture li:nth-of-type(4){
+    background-color: cornflowerblue;
+  }
+
+
+/* 左右按钮 */
+
+  .wrap .go{
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+  }
+
+  .wrap .go li{
+    position: absolute;
+    display: inline-block;
+    background-color: cornsilk;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    
+    text-align: center;
+
+    border-radius: 20%;
+
+    z-index: 9;
+
+    cursor: pointer;
+    
+    user-select: none;
+  }
+
+  .wrap .go .go-pre{
+    left: 10px;
+    
+  }
+
+  .wrap .go .go-next{
+    right: 10px;
+  }
+
+  .wrap .main-picture .active{
+    opacity: 1;
+    /* z-index: 1; */
+  }
+
+
+
+/* 轮播图的点 */
+  .wrap .point{
+    position: absolute;
+    width: 88px;
+
+    bottom: 20px;
+    z-index: 11;
+
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  
+  .wrap .point li{
+    float: left;
+
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    background-color: cornsilk;
+
+    margin-right: 14px;
+
+  }
+
+  .wrap .point .point-active{
+    background-color: black;
+  }
+
+</style>
+
+<body>
+  <div class="wrap" id="lunbotu">
+    <ul class="main-picture">
+      <li class="item active">
+        <img src="./img/01.jpg" alt="">
+      </li>
+      <li class="item">
+        <img src="./img/02.jpg" alt="">
+      </li>
+      <li class="item">
+        <img src="./img/03.jpg" alt="">
+      </li>
+      <li class="item">
+        <img src="./img/04.jpg" alt="">
+      </li>
+    </ul>
+
+    <ul class="go">
+      <li class="go-pre" id="go-pre">&lt;</li>
+      <li class="go-next" id="go-next">&gt;</li>
+    </ul>
+
+    <ul class="point">
+      <li class="point-item point-active" data-index="0"></li>
+      <li class="point-item" data-index="1"></li>
+      <li class="point-item" data-index="2"></li>
+      <li class="point-item" data-index="3"></li>
+    </ul>
+  </div>
+
+  <script>
+    var p=document.getElementById('lunbotu');
+    var items=document.getElementsByClassName('item');
+    var goPre=document.getElementById('go-pre');
+    var goNext=document.getElementById('go-next');
+    var points=document.getElementsByClassName('point-item');
+
+    var index = 0;
+
+    var clearActive=function(){
+      for(var i=0;i<items.length;i++){
+        items[i].className='item';
+      }
+    }
+
+    var cleanPointActive=function(){
+      for(var i=0;i<points.length;i++){
+        points[i].className='point-item';
+      }
+    }
+
+    var goIndex=function(){
+      clearActive();
+      items[index].className='item active';
+    }
+
+    var goPoint=function(){
+      cleanPointActive();
+      points[index].className='point-item point-active';
+    }
+
+    var preItem=function(){
+      if(index==0)
+        index=3;
+      else
+        index--;
+    }
+
+    var nextItem=function(){
+      if(index<3)
+        index++;
+      else
+        index=0;
+    }
+
+    goPre.addEventListener('click',function(){
+      preItem();
+      goPoint();
+      goIndex();
+    })
+
+    goNext.addEventListener('click',function(){
+      nextItem();
+      goPoint();
+      goIndex();
+    })
+
+    for(var i=0;i<points.length;i++){
+      points[i].addEventListener('click',function(){
+        index = this.getAttribute('data-index');
+        goPoint();
+        goIndex();
+      })
+    }
+
+    var timer = null;
+    function autoPlay(){
+      timer = setInterval(function(){
+        nextItem();
+        goPoint();
+        goIndex();
+      },2000)
+    }
+
+    p.onmouseover = function(){
+      clearInterval(timer);
+    };
+
+    p.onmouseout=autoPlay;
+
+
+  </script>
+</body>
+</html>

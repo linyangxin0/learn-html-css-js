@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .box{
+    width: 200px;
+    height: 200px;
+    background-image: url("../img/test.jpg");
+
+    /* scroll随着box的滚动(浏览器),背景一起滚动 */
+
+    /* local会随着box内容的滚顶，背景一起滚动 */
+    background-attachment: local;
+
+    /* 背景不随滚动条的滚动而滚动,当div不可见时才消失 */
+    background-attachment: fixed;
+
+    overflow: auto;
+  }
+</style>
+<body>
+  <div class="box">
+    由于春节期间多地物流只剩下顺丰，这使得作为物流配送主力的顺丰单月业务量实现逆势增长，连续第三个月保持在百亿元以上。不过，或受新冠肺炎疫情影响，顺丰速运物流业务优先支援疫区配送，致使单票收入同比发生了下降.据国家邮政局发布的快递发展指数报告，1月份快递行业整体业务量下降11%、快递业务收入同比下降12.6%。按照国家邮政局预计1月份快递业务量40亿件计算，顺丰控股1月份业务量约占到全行业的14.15%。
+  </div>
+</body>
+</html>

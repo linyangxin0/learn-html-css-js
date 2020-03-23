@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+
+  /* 1、重置样式 */
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a{
+    text-decoration: none;
+    color: blue;
+  }
+
+  /* 2、设置样式 */
+
+
+  /* 3、设置每一个li的样式 */
+  .page li{
+    display: inline-block;
+  }
+
+  .page ul li a{
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border: 1px solid black;
+    /* 居中 */
+    text-align: center;
+    line-height: 34px;
+    font-size: 14px;
+     /* 调整间距 */
+    margin-right: 5px;
+  }
+
+  .page ul li a:hover{
+    border: 1px solid #38f;
+    background-color: #f2f8ff;
+  }
+
+
+  .page .prev a,.page .next a{
+    width: 88px;
+  }
+
+  /* 点击后a的效果 */
+  .page .active{
+    font-weight: 700;
+    border: none;
+    color: black;
+    cursor: initial;
+  }
+
+  .page .active:hover{
+    border: none;
+    background-color: transparent;
+  }
+</style>
+<body>
+  <!-- .page>ul>(li{&lt;上一页}>a[href=#])+li{&}*10>a[href=#]+{下一页&gt;}>a[href=#] -->
+  <div class="page">
+    <ul>
+      <li class="prev"><a href="#">&lt;上一页</a></li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#" class="active">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">6</a></li>
+      <li><a href="#">7</a></li>
+      <li><a href="#">8</a></li>
+      <li><a href="#">9</a></li>
+      <li><a href="#">10</a></li>
+      <li class="next"><a href="#">下一页&gt;</a></li>
+    </ul>
+  </div>
+</body>
+</html>

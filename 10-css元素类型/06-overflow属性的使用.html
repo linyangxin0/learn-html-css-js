@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .box{
+    background-color: red;
+    width: 150px;
+    height: 150px;
+
+    /* overflow默认值visiable超出部分依然可见
+       hidden溢出部分裁剪
+       scroll:超出部分隐藏，但是可以用滚动条查看
+       auto：超出时滚动，未超出时正常显示
+     */
+
+     /* 
+       overflow-x overflow-y分别设置水平和竖直方向上的溢出方式
+      */
+    overflow:scroll;
+  }
+</style>
+<body>
+  <div class="box">
+    <img src="../img/test.jpg" alt="">
+  </div>
+</body>
+</html>

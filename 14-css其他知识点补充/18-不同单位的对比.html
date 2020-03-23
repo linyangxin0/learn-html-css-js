@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+  <style>
+    .contenter{
+      font-size: 20px;
+    }
+
+    .box{
+      /* 
+        设置宽度大小：
+          1、px
+          2、em：想看自己有无font-size，如果有em相对于自己的font-size
+            如果自己没有fongt-size，相对于父元素的font-size
+          3、%：多查文档，宽度百分比相对于父元素的宽度
+       */
+
+      width: 200px;
+      height: 200px;
+      background-color: indianred;
+
+      color: lavender;
+      /* 
+        文字大小的单位：
+        1、px：像素
+        2、em：相对于父元素的字体大小
+        3、百分比：用在不同场景，相对不一样
+           在字体中，相对父元素的字体
+       */
+      font-size: 2em;
+    }
+  </style>
+
+<body>
+  <div class="contenter">
+    <div class="box">box的内容</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+
+  /* 结论：伪元素可以看成行内元素，无法修改宽和高 ，可以使用display: inline-block;来修改*/
+  span::before{
+    /* 所需添加内容，不能省略 */
+    content: "1";
+    /* 下面展示为content的内容属性 */
+    color: brown;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+
+  span::after{
+    /* content: "abc"; */
+
+    content: url("../img/test01.jpg");
+    
+    
+  }
+</style>
+<body>
+
+  <span>我是span元素</span>
+</body>
+</html>

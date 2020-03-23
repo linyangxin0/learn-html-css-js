@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+
+  /* 顺序不能随便换，要拿这个顺序 */
+  /* lv ha */
+  /* ha其他元素也可以 */
+  /* 未访问的状态 */
+  a:link{
+    color: red;
+  }
+
+/* 已访问过 */
+  a:visited{
+    color: green;
+  }
+/* 鼠标放上去 */
+  a:hover{
+    color: blue;
+  }
+/* 鼠标点上去未放手 */
+  a:active{
+    color: orange;
+  }
+
+
+/* foucs的使用 tab键可以切换的都有这个属性 */
+/* 建议a标签的状态为lv feng ha */
+  input:focus{
+    background-color: orangered;
+  }
+
+  /* 去掉a元素的焦点状态 */
+  a:focus{
+    outline: none;
+  }
+</style>
+<body>
+  <!-- tabindex可以调整tab选中元素的顺序，-1不能被选中 -->
+  <a tabindex="-1" href="#">百度一下</a>
+
+  <input type="text" name="" id="">
+</body>
+</html>

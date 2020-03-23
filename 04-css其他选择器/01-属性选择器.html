@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* 有title属性 */
+  [title]{
+    color: red;
+  }
+
+  /* title等于某个值 */
+  [title="one div元素"]{
+    font-size: 25px;
+  }
+
+  /* 包含one */
+  [title*="one" ]{
+    background-color: rosybrown;
+  }
+
+  /* title以one开头 */
+  [title^="one"]{
+    background-color: seagreen;
+  }
+
+  /* title以one结尾 */
+  [title$="one"]{
+    background-color: skyblue;
+  }
+
+
+</style>
+<body>
+  <div title="one div元素">我是div元素</div>
+  <p title="p元素">我是p元素</p>
+  <p title="p one">我是p元素</p>
+  <p>我是p元素</p>
+  <span title="one span元素">我是span元素</span>
+</body>
+</html>

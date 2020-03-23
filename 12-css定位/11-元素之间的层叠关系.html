@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box{
+    width: 300px;
+    height: 300px;
+    background-color: #f00;
+  }
+
+  .inner{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+  }
+
+  .box2{
+    display: inline-block;
+
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+  }
+
+  span{
+    position: relative;
+    background-color: violet;
+    left: 100px;
+    z-index: 9;
+
+  }
+
+  strong{
+    position: relative;
+    background-color: green;
+
+  }
+</style>
+<body>
+  <div class="box">
+    <div class="inner"></div>
+  </div>
+
+  <!-- 同样是定位元素，后面的元素盖在前面元素上面 -->
+  <span>hahahha</span>
+  <strong>strong</strong>
+  <div class="box2"></div>
+</body>
+</html>

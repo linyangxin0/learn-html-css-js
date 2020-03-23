@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+
+  body{
+    /* 视距 */
+    perspective: 1000px;
+  }
+  .box{
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+
+    margin: 0 auto;
+
+    transform: translate3d(0,0,200px);
+  }
+
+  .cntent{
+    position: relative;
+  }
+
+  .content .item{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+  }
+
+  .item1{
+    background-color: burlywood;
+  }
+
+  .item1{
+    background-color:seagreen;
+  }
+
+  .item1{
+    background-color: darkcyan;
+  }
+
+  .item1{
+    background-color: gray;
+  }
+</style>
+<body>
+  <div class="box"></div>
+
+  <div class="content">
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+    <div class="item item4"></div>
+  </div>
+</body>
+</html>

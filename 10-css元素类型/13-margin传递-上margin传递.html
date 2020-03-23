@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  }
+
+  /* 演示传递 */
+  .box{
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+
+/* 解决办法1 */
+    /* border-top: 1px solid yellowgreen; */
+
+/* 解决办法二：触发BFC */
+    overflow: hidden;
+  }
+
+  .inner{
+    width: 100px;
+    height: 100px;
+    background-color: saddlebrown;
+
+    /* margin-left */
+    /* 左右不会传递 */
+    /* margin-left: 20px; */
+
+    /* 上下margin不会传递 */
+    margin-top: 20px;
+  }
+</style>
+<body>
+  <div class="box1"></div>
+
+  <div class="box">
+    <div class="inner"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/* 指定css文件编码 */
+
+@charset "UTF-8";
+
+
+h1{
+  font-size: 50px;
+  color: rebeccapurple;
+}
+div{
+  font-size: 20px;
+  background-color: red;
+}
+
+/* 并集选择器 */
+h1 , p , a{
+  color: salmon;
+}

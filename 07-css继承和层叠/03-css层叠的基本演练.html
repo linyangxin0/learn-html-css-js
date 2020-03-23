@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  /* 基本层叠：后面把前面层叠掉（使用相同选择器） */
+  .box1{
+    color: red;
+  }
+
+  .box2{
+    background-color: royalblue;
+  }
+
+  .box3{
+    width: 300px;
+  }
+
+  /* 当选择器不同时，就不能按照基本层叠来理解 */
+  /* 需要知道选择器的权重：
+
+    ！improtant：权重10000
+    内联样式：权重1000
+    id：权重100
+    class、属性选择器、伪类：权重10
+    元素选择器、伪元素：权重1
+    通配符：权重0
+   */
+
+
+  div{
+    color: seagreen;
+  }
+
+
+  .box{
+    color: tomato !important;
+  }
+
+  #main{
+    color: violet;
+  }
+</style>
+<body>
+  <div class="box1 box2 box3">
+    哈哈哈哈哈
+  </div>
+
+  <div id="main" class="box">呵呵呵呵呵</div>
+</body>
+</html>

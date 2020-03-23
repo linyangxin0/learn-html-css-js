@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .box{
+    width: 150px;
+    height: 150px;
+    background-color: blanchedalmond;
+/* 
+    transition: transform 1s ease; */
+  }
+
+  .box:hover{
+    /* transform:translate(250px); */
+
+    animation:test1 2s linear infinite,test2 2s linear infinite;
+  }
+
+  @keyframes test1{
+    0%{
+      transform:translate(0,0);
+    }
+
+    25%{
+      transform:translate(200px,0);
+    }
+
+    50%{
+      transform:translate(200px,200px);
+    }
+
+    75%{
+      transform:translate(0,200px);
+    }
+
+    100%{
+      transform:translate(0,0);
+    }
+  }
+
+  @keyframes test2{
+    0%{
+      opacity: 1;
+    }
+
+    25%{
+      opacity: 0.5;
+
+    }
+
+    50%{
+      opacity: 0.3;
+
+    }
+
+    75%{
+      opacity: 0.5;
+
+    }
+
+    100%{
+      opacity: 1;
+
+    }
+  }
+
+</style>
+<body>
+  <div class="box"></div>
+</body>
+</html>

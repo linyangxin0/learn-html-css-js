@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  h2{
+    text-align: center;
+  }
+
+  table{
+    /* 1、边框的宽度 2、实线或虚线 3、边框的颜色 */
+    border: 1px solid red;
+
+    /* 将边框分开 */
+    /* border-collapse: separate; */
+
+    /* 将边框合并 */
+    border-collapse: collapse;
+    
+
+    /* table的居中显示 */
+    margin: 20px auto;
+  }
+
+  table tr:nth-child(1){
+    font-weight: 700;
+  }
+
+  td{
+    border: 1px solid red;
+    width: 100px;
+  }
+</style>
+<body>
+
+  <h2>我是一个表格</h2>
+  <!-- table>(tr>td{单元格$}*5)*3 -->
+  <table>
+    <tr>
+      <td>单元格1</td>
+      <td>单元格2</td>
+      <td>单元格3</td>
+      <td>单元格4</td>
+      <td>单元格5</td>
+    </tr>
+    <tr>
+      <td>单元格1</td>
+      <td>单元格2</td>
+      <td>单元格3</td>
+      <td>单元格4</td>
+      <td>单元格5</td>
+    </tr>
+    <tr>
+      <td>单元格1</td>
+      <td>单元格2</td>
+      <td>单元格3</td>
+      <td>单元格4</td>
+      <td>单元格5</td>
+    </tr>
+  </table>
+</body>
+</html>
